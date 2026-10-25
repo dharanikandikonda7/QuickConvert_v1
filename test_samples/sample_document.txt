@@ -1,0 +1,12 @@
+QuickConvert: Modern Windows 11 Document Converter
+==================================================
+
+Features:
+- Radial glassmorphism user interface
+- High fidelity PDF to image & text conversions
+- Unicode text support: Привет мир, こんにちは, café, naïve
+- Strict overwrite safety and clean architecture
+
+Paragraph 2:
+QuickConvert automatically derives non-colliding output filenames
+and handles multipage exports with sequential numbering.

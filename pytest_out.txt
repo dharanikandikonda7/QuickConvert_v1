@@ -1,0 +1,14 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.3, pytest-9.1.1, pluggy-1.7.0
+rootdir: D:\PROJECTS\QuickConvertMowa
+collected 88 items
+
+tests\test_application_verification.py ......                            [  6%]
+tests\test_cli.py ......                                                 [ 13%]
+tests\test_context_menu_loading.py ...............                       [ 30%]
+tests\test_converters.py ...................                             [ 52%]
+tests\test_detector.py ..........                                        [ 63%]
+tests\test_packaged_executable.py .                                      [ 64%]
+tests\test_popup_launcher.py .................                           [ 84%]
+tests\test_popup_window_verification.py .........                        [ 94%]
+tests\test_registry.py .....                                             [100%]

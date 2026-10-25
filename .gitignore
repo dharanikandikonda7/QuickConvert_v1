@@ -1,0 +1,124 @@
+
+# ==============================
+# Python
+# ==============================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+wheels/
+pip-wheel-metadata/
+
+# ==============================
+# Environment and secrets
+# ==============================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets.json
+credentials.json
+
+# ==============================
+# IDE and editors
+# ==============================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ==============================
+# PyInstaller / packaging
+# ==============================
+*.spec.bak
+*.manifest
+*.exe
+*.msi
+*.dll
+*.pdb
+
+# Keep the PyInstaller spec file tracked if it exists.
+# Remove the *.spec pattern if you add it later.
+
+# ==============================
+# Logs and debugging
+# ==============================
+*.log
+logs/
+debug/
+crash_reports/
+
+# ==============================
+# Temporary conversion files
+# ==============================
+temp/
+tmp/
+temporary/
+temp_*/
+tmp_*/
+*.tmp
+*.temp
+~$*
+
+# ==============================
+# Generated conversion output
+# ==============================
+converted/
+converted_files/
+output/
+outputs/
+test_output/
+preview_cache/
+thumbnail_cache/
+
+# ==============================
+# Tests and coverage
+# ==============================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+
+# ==============================
+# Local databases and history
+# ==============================
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+
+# ==============================
+# Downloaded models and engines
+# ==============================
+models/
+downloads/
+third_party_downloads/
+
+# ==============================
+# Optional local documentation
+# ==============================
+site/
