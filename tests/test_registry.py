@@ -20,9 +20,29 @@ def test_supported_targets_for_pdf():
     assert target_dict["pdf"].is_enabled is False
     assert "already in pdf" in target_dict["pdf"].disabled_reason.lower()
 
-    # PDF -> DOCX should be disabled with clear explanation
+    # PDF -> DOCX needs Microsoft Word: enabled only if Word is installed,
+    # otherwise disabled with a clear explanation.
+    if registry.has_msword:
+        assert target_dict["docx"].is_enabled is True
+    else:
+        assert target_dict["docx"].is_enabled is False
+        assert len(target_dict["docx"].disabled_reason) > 0
+
+
+def test_supported_targets_for_docx():
+    targets = registry.get_target_options_for_source("docx")
+    target_dict = {t.target_format: t for t in targets}
+
+    assert target_dict["txt"].is_enabled is True
+    assert target_dict["html"].is_enabled is True
     assert target_dict["docx"].is_enabled is False
-    assert len(target_dict["docx"].disabled_reason) > 0
+
+    # DOCX -> PDF needs Word or LibreOffice
+    if registry.has_office_renderer:
+        assert target_dict["pdf"].is_enabled is True
+    else:
+        assert target_dict["pdf"].is_enabled is False
+        assert len(target_dict["pdf"].disabled_reason) > 0
 
 
 def test_supported_targets_for_png():
@@ -49,3 +69,10 @@ def test_normalization():
     c2 = registry.get_converter("jpeg", "png")
     assert c1 is not None
     assert c1 == c2
+
+
+def test_docx_pdf_uses_word_converter():
+    """DOCX -> PDF must be the Word/LibreOffice layout engine, never a text dump."""
+    c = registry.get_converter("docx", "pdf")
+    assert c is not None
+    assert type(c).__module__.endswith("word_converters")
