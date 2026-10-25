@@ -28,6 +28,7 @@ pip-wheel-metadata/
 # ==============================
 .env
 .env.*
+.venv312
 !.env.example
 *.pem
 *.key
